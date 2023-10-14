@@ -9,6 +9,7 @@ export function UseAuth() {
 // eslint-disable-next-line react/prop-types
 export default function TodoProvider({ children }) {
   const [todos, setTodos] = useState([]);
+  const [search, setSearch] = useState('');
 
   // save todo object
   const onSave = (data) => {
@@ -40,6 +41,8 @@ export default function TodoProvider({ children }) {
     onSave,
     onUpdate,
     onDelete,
+    search,
+    setSearch,
   };
 
   return <TodoContext.Provider value={value}>{children}</TodoContext.Provider>;
