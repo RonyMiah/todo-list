@@ -1,7 +1,7 @@
-import { UseAuth } from '../Context/todoContext';
+import { useAuth } from '../Context/todoContext';
 
 function AddInput() {
-  const { onSave } = UseAuth();
+  const { onSave } = useAuth();
   return (
     <>
       <form

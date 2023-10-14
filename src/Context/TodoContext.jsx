@@ -2,7 +2,7 @@ import { createContext, useContext, useState } from 'react';
 
 const TodoContext = createContext();
 
-export function UseAuth() {
+export function useAuth() {
   return useContext(TodoContext);
 }
 

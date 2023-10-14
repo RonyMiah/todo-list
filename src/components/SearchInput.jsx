@@ -1,9 +1,10 @@
 import { FcDocument } from 'react-icons/fc';
-import { UseAuth } from '../Context/todoContext';
+
 import TodoContainer from './TodoContainer';
+import { useAuth } from '../Context/todoContext';
 
 function SearchInput() {
-  const { todos, setSearch } = UseAuth();
+  const { todos, setSearch } = useAuth();
   return (
     <>
       <div className="mt-5 w-10/12 lg:w-6/12 mx-auto bg-white rounded-md shadow-md p-3 flex flex-col items-center gap-4">

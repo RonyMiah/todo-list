@@ -1,8 +1,8 @@
-import { UseAuth } from '../Context/todoContext';
 import { FcDocument } from 'react-icons/fc';
 import TodoItem from './TodoItem';
+import { useAuth } from '../Context/todoContext';
 function TodoContainer() {
-  const { todos, onUpdate, onDelete, search } = UseAuth();
+  const { todos, onUpdate, onDelete, search } = useAuth();
 
   const searchedTodos = [
     ...(search

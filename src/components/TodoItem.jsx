@@ -13,11 +13,11 @@ import {
 import { GoCopy } from 'react-icons/go';
 import { LuPencil } from 'react-icons/lu';
 import { AiOutlineDelete } from 'react-icons/ai';
-import { UseAuth } from '../Context/todoContext';
 import { useRef } from 'react';
+import { useAuth } from '../Context/todoContext';
 
 function TodoItem({ index, todo }) {
-  const { onUpdate, onDelete } = UseAuth();
+  const { onUpdate, onDelete } = useAuth();
 
   const { onOpen, onClose, isOpen } = useDisclosure();
 
