@@ -1,6 +1,10 @@
-import { createContext, useState } from 'react';
+import { createContext, useContext, useState } from 'react';
 
-export const TodoContext = createContext();
+const TodoContext = createContext();
+
+export function UseAuth() {
+  return useContext(TodoContext);
+}
 
 // eslint-disable-next-line react/prop-types
 export default function TodoProvider({ children }) {
@@ -15,7 +19,6 @@ export default function TodoProvider({ children }) {
   };
 
   // update a todo only takes the todo object and the index of the todo
-
   const onUpdate = (data, index) => {
     const allTodos = [...todos];
     const obj = { ...allTodos[index], ...data };
@@ -24,10 +27,19 @@ export default function TodoProvider({ children }) {
     setTodos(allTodos);
   };
 
+  //delete todo it only takes index of todo
+  const onDelete = (index) => {
+    const allTodos = [...todos];
+    allTodos.splice(index, 1);
+    localStorage.setItem('todos', JSON.stringify(allTodos));
+    setTodos(allTodos);
+  };
+
   const value = {
     todos,
     onSave,
     onUpdate,
+    onDelete,
   };
 
   return <TodoContext.Provider value={value}>{children}</TodoContext.Provider>;
