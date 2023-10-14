@@ -1,17 +1,44 @@
-import { Input, InputGroup, InputLeftElement } from '@chakra-ui/react';
-import { GoSearch } from 'react-icons/go';
+
+
 
 function SearchInput() {
+
+//     e.preventDefault();
+//     if (scearchValue === '' || scearchValue === undefined) {
+//       alert('Input Field Can Not Blank .');
+//     }
+
+//     const newTodos = [
+//       ...todos,
+//       { id: uuidv4, content: scearchValue, completed: false },
+//     ];
+//     setTodos(newTodos);
+//     setScearchValue('');
+//   };
+
+
   return (
-    <div className="w-6/12 mx-auto mt-3">
-      <InputGroup>
-        <InputLeftElement pointerEvents="none">
-          <GoSearch className="text-green-300" />
-        </InputLeftElement>
-        <Input type="text" placeholder="Search" />
-        <button className="p-2 bg-pink-600 ms-3 font-bold"> +Add</button>
-      </InputGroup>
-    </div>
+    <>
+      <form
+        // onSubmit={(e) => {
+        //   e.preventDefault();
+        //   const todo = e.target[0].value;
+        //   onSave({ todo: todo, isCompleted: false });
+        //   e.target[0].value = '';
+        // }}
+        className="w-10/12 lg:w-6/12 mx-auto bg-white rounded-md shadow-md p-3 flex items-center gap-4"
+      >
+        <input
+          type="text"
+          className="border focus:border-gray-400 w-full transition-all duration-75 outline-none rounded-sm px-3 py-2"
+          placeholder="Eg. watch jujutsu kaisen"
+          required
+        />
+        <button className="px-6 py-2 bg-slate-400 rounded-sm text-white">
+          Add
+        </button>
+      </form>
+    </>
   );
 }
 

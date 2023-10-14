@@ -1,12 +1,11 @@
 import './App.css';
 import SearchInput from './components/SearchInput';
 
-
 function App() {
   return (
-    <>
-      <SearchInput/>
-    </>
+    <div>
+      <SearchInput />
+    </div>
   );
 }
 
