@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import {
+  useToast,
   Checkbox,
   FocusLock,
   IconButton,
@@ -17,6 +18,7 @@ import { useRef } from 'react';
 
 function TodoItem({ index, todo, onDelete, onUpdate }) {
   const { onOpen, onClose, isOpen } = useDisclosure();
+  const toast = useToast();
 
   const {
     onOpen: onDeleteOpen,
@@ -50,7 +52,12 @@ function TodoItem({ index, todo, onDelete, onUpdate }) {
         <IconButton
           onClick={() => {
             navigator.clipboard.writeText(todo.todo);
-            alert('Todo copied!');
+            toast({
+              title: 'Todo copied!',
+              status: 'success',
+              duration: 9000,
+            });
+            // alert('Todo copied!');
           }}
         >
           <GoCopy
