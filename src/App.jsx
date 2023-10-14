@@ -1,5 +1,5 @@
 import './App.css';
-import TodoProvider from './Context/TodoContext';
+import TodoProvider from './Context/todoContext';
 import Layout from './components/Layout';
 
 function App() {
