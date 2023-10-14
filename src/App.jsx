@@ -1,10 +1,10 @@
 import './App.css';
-import SearchInput from './components/SearchInput';
+import Layout from './components/Layout';
 
 function App() {
   return (
     <div>
-      <SearchInput />
+      <Layout />
     </div>
   );
 }
