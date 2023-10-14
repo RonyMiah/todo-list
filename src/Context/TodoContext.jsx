@@ -1,17 +1,10 @@
-
+import { createContext } from 'react';
 
 export const TodoContext = createContext();
 
 // eslint-disable-next-line react/prop-types
 export default function TodoProvider({ children }) {
+  const value = {};
 
-  const value = {
-
-  }
-
-  return (
-    <TodoContext.Provider value={value}>
-      {children}
-    </TodoContext.Provider>
-  );
+  return <TodoContext.Provider value={value}>{children}</TodoContext.Provider>;
 }

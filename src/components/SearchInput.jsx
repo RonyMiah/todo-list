@@ -1,24 +1,7 @@
-
-
-
 function SearchInput() {
-
-//     e.preventDefault();
-//     if (scearchValue === '' || scearchValue === undefined) {
-//       alert('Input Field Can Not Blank .');
-//     }
-
-//     const newTodos = [
-//       ...todos,
-//       { id: uuidv4, content: scearchValue, completed: false },
-//     ];
-//     setTodos(newTodos);
-//     setScearchValue('');
-//   };
-
-
   return (
-    <>
+    <div className="bg-[#f4f5f9] bg-opacity-25 flex flex-col justify-center items-center h-screen w-full ">
+      <div className="absolute w-full h-1/2 bg-slate-400 top-0 left-0 -z-10"></div>
       <form
         // onSubmit={(e) => {
         //   e.preventDefault();
@@ -38,7 +21,7 @@ function SearchInput() {
           Add
         </button>
       </form>
-    </>
+    </div>
   );
 }
 
