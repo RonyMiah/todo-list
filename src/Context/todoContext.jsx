@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 
 const TodoContext = createContext();
 
@@ -11,6 +11,16 @@ export function useAuth() {
 function TodoProvider({ children }) {
   const [todos, setTodos] = useState([]);
   const [search, setSearch] = useState('');
+
+  //get all todos on first load
+  useEffect(() => {
+    const allTodos = localStorage.getItem('todos');
+    allTodos ? setTodos(JSON.parse(allTodos)) : null;
+    return () => {
+      const allTodos = localStorage.getItem('todos');
+      allTodos ? setTodos(JSON.parse(allTodos)) : null;
+    };
+  }, []);
 
   // save todo object
   const onSave = (data) => {
