@@ -7,7 +7,7 @@ export function useAuth() {
 }
 
 // eslint-disable-next-line react/prop-types
-export default function TodoProvider({ children }) {
+function TodoProvider({ children }) {
   const [todos, setTodos] = useState([]);
   const [search, setSearch] = useState('');
 
@@ -47,3 +47,5 @@ export default function TodoProvider({ children }) {
 
   return <TodoContext.Provider value={value}>{children}</TodoContext.Provider>;
 }
+
+export default TodoProvider;
